@@ -4,15 +4,13 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Tables - SB Admin</title>
+        <!--Page Title-->
+        <title>Rooms</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-        <!--Side Bar-->
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="admin.html">Honance Hotel</a>
@@ -33,6 +31,7 @@
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <!--Side Bar-->
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <!--Dashboard-->
@@ -57,53 +56,149 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tables</h1>
+                        <h1 class="mt-4">Rooms</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="admin.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tables</li>
+                            <li class="breadcrumb-item active">Rooms</li>
                         </ol>
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-                                .
-                            </div>
-                        </div>
+                        <!--Rooms Data-->
                         <div class="card mb-4">
                             <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                DataTable Example
+                                <i class="fa-solid fa-door-open"></i>
+                                Rooms
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
+                                            <th>ID Room</th>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Facilities</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Photos</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>STD-RM</th>
+                                            <th>Standard Room</th>
+                                            <th>Facilities</th>
+                                            <th>5</th>
+                                            <th>Rp 231,305</th>
+                                            <th>Photos</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        <!--Standard Room-->
                                         <tr>
-                                            <td>Donna Snider</td>
-                                            <td>Customer Support</td>
-                                            <td>New York</td>
-                                            <td>27</td>
-                                            <td>2011/01/25</td>
-                                            <td>$112,000</td>
+                                            <td>STD-RM</td>
+                                            <td>Standard Room</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Double Bed</li>
+                                                    <li>WiFi</li>
+                                                    <li>Water Heater</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>Television</li>
+                                                </ul>
+                                            </td>
+                                            <td>5</td>
+                                            <td>Rp 231,305</td>
+                                            <td><img src="\admin\assets\img\standard-room\std-rm1.jpg" alt=""></td>
+                                        </tr>
+                                        <!--Twin Room-->
+                                        <tr>
+                                            <td>TWN-RM</td>
+                                            <td>Twin Room</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Twin Bed</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>WiFi</li>
+                                                    <li>Water Heater</li>
+                                                    <li>Television</li>
+                                                </ul>
+                                            </td>
+                                            <td>3</td>
+                                            <td>Rp 292,492</td>
+                                            <td><img src="\admin\assets\img\twin-room\twn-rm1.jpg" alt=""></td>
+                                        </tr>
+                                        <!--Family Room-->
+                                        <tr>
+                                            <td>FMY-RM</td>
+                                            <td>Family Room</td>
+                                            <td>
+                                                <ul>
+                                                    <li>King Bed</li>
+                                                    <li>WiFi</li>
+                                                    <li>City View</li>
+                                                    <li>Balcony</li>
+                                                    <li>Water Heater</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>Television</li>
+                                                    <li>Additional Toilet</li>
+                                                </ul>
+                                            </td>
+                                            <td>2</td>
+                                            <td>Rp 642,859</td>
+                                            <td><img src="\admin\assets\img\family-room\fmy-rm1.jpg" alt=""></td>
+                                        </tr>
+                                        <!--Deluxe Room-->
+                                        <tr>
+                                            <td>DLX-RM</td>
+                                            <td>Deluxe Room</td>
+                                            <td>
+                                                <ul>
+                                                    <li>King Bed</li>
+                                                    <li>WiFi</li>
+                                                    <li>Balcony</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>Television</li>
+                                                    <li>Water Heater</li>
+                                                </ul>
+                                            </td>
+                                            <td>5</td>
+                                            <td>Rp 315,255</td>
+                                            <td><img src="\admin\assets\img\deluxe-room\dlx-rm1.jpg" alt=""></td>
+                                        </tr>
+                                        <!--Superior Twin Room-->
+                                        <tr>
+                                            <td>SPR-TWN-RM</td>
+                                            <td>Superior Twin Room</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Queen Bed</li>
+                                                    <li>Outdoor View</li>
+                                                    <li>WiFi</li>
+                                                    <li>Water Heater</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>Television</li>
+                                                    <li>Additional Toilet</li>
+                                                </ul>
+                                            </td>
+                                            <td>3</td>
+                                            <td>Rp 506,445</td>
+                                            <td><img src="\admin\assets\img\superior-twin-room\spr-twn-rm1.jpg" alt=""></td>
+                                        </tr>
+                                        <!--One Bed Apartment-->
+                                        <tr>
+                                            <td>OB-AP</td>
+                                            <td>One Bed Apartment</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Queen Bed</li>
+                                                    <li>Outdoor View</li>
+                                                    <li>Water Heater</li>
+                                                    <li>WiFi</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>Additional Toilet</li>
+                                                    <li>Television</li>
+                                                </ul>
+                                            </td>
+                                            <td>2</td>
+                                            <td>878,395</td>
+                                            <td><img src="\admin\assets\img\one-bed-apartment\ob-ap1.jpg" alt=""></td>
                                         </tr>
                                     </tbody>
                                 </table>
