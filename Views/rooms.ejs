@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!--Page Title-->
+        <title>Rooms</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="admin.css" rel="stylesheet" />
+        <link rel="stylesheet" href="rooms.css">
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="/admin">Honance Hotel</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <!--Admin Profile-->
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <!--Side Bar-->
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <!--Dashboard-->
+                            <a class="nav-link" href="/admin">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <!--Bookings-->
+                            <a class="nav-link" href="/bookings">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-bookmark"></i></div>
+                                Bookings
+                            </a>
+                            <!--Rooms-->
+                            <a class="nav-link" href="/rooms">
+                                <div class="sb-nav-link-icon"><i class="fa-sharp fa-solid fa-door-closed"></i></div>
+                                Rooms
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Rooms</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Rooms</li>
+                        </ol>
+                        <!--Rooms Data-->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa-solid fa-door-open"></i>
+                                All Rooms
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Room</th>
+                                            <th>Name</th>
+                                            <th>Facilities</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Photos</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID Room</th>
+                                            <th>Name</th>
+                                            <th>Facilities</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Photos</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <!--Standard Room-->
+                                        <tr>
+                                            <td>STD-RM</td>
+                                            <td>Standard Room</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Double Bed</li>
+                                                    <li>WiFi</li>
+                                                    <li>Water Heater</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>Television</li>
+                                                </ul>
+                                            </td>
+                                            <td>5</td>
+                                            <td>Rp 231,305</td>
+                                            <td><img src="\img\standard-room\std-rm1.jpg" alt=""></td>
+                                            <td class="action-btn">
+                                                <button class="btn-action" id="btn-edit" onclick=""><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
+                                            </td>
+                                        </tr>
+                                        <!--Twin Room-->
+                                        <tr>
+                                            <td>TWN-RM</td>
+                                            <td>Twin Room</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Twin Bed</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>WiFi</li>
+                                                    <li>Water Heater</li>
+                                                    <li>Television</li>
+                                                </ul>
+                                            </td>
+                                            <td>3</td>
+                                            <td>Rp 292,492</td>
+                                            <td><img src="\img\twin-room\twn-rm1.jpg" alt=""></td>
+                                            <td class="action-btn">
+                                                <button class="btn-action" id="btn-edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
+                                            </td>
+                                        </tr>
+                                        <!--Family Room-->
+                                        <tr>
+                                            <td>FMY-RM</td>
+                                            <td>Family Room</td>
+                                            <td>
+                                                <ul>
+                                                    <li>King Bed</li>
+                                                    <li>WiFi</li>
+                                                    <li>City View</li>
+                                                    <li>Balcony</li>
+                                                    <li>Water Heater</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>Television</li>
+                                                    <li>Additional Toilet</li>
+                                                </ul>
+                                            </td>
+                                            <td>2</td>
+                                            <td>Rp 642,859</td>
+                                            <td><img src="\img\family-room\fmy-rm1.jpg" alt=""></td>
+                                            <td class="action-btn">
+                                                <button class="btn-action" id="btn-edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
+                                            </td>
+                                        </tr>
+                                        <!--Deluxe Room-->
+                                        <tr>
+                                            <td>DLX-RM</td>
+                                            <td>Deluxe Room</td>
+                                            <td>
+                                                <ul>
+                                                    <li>King Bed</li>
+                                                    <li>WiFi</li>
+                                                    <li>Balcony</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>Television</li>
+                                                    <li>Water Heater</li>
+                                                </ul>
+                                            </td>
+                                            <td>5</td>
+                                            <td>Rp 315,255</td>
+                                            <td><img src="\img\deluxe-room\dlx-rm1.jpg" alt=""></td>
+                                            <td class="action-btn">
+                                                <button class="btn-action" id="btn-edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
+                                            </td>
+                                        </tr>
+                                        <!--Superior Twin Room-->
+                                        <tr>
+                                            <td>SPR-TWN-RM</td>
+                                            <td>Superior Twin Room</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Queen Bed</li>
+                                                    <li>Outdoor View</li>
+                                                    <li>WiFi</li>
+                                                    <li>Water Heater</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>Television</li>
+                                                    <li>Additional Toilet</li>
+                                                </ul>
+                                            </td>
+                                            <td>3</td>
+                                            <td>Rp 506,445</td>
+                                            <td><img src="\img\superior-twin-room\spr-twn-rm1.jpg" alt=""></td>
+                                            <td class="action-btn">
+                                                <button class="btn-action" id="btn-edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
+                                            </td>
+                                        </tr>
+                                        <!--One Bed Apartment-->
+                                        <tr>
+                                            <td>OB-AP</td>
+                                            <td>One Bed Apartment</td>
+                                            <td>
+                                                <ul>
+                                                    <li>Queen Bed</li>
+                                                    <li>Outdoor View</li>
+                                                    <li>Water Heater</li>
+                                                    <li>WiFi</li>
+                                                    <li>Air Conditioner</li>
+                                                    <li>Additional Toilet</li>
+                                                    <li>Television</li>
+                                                </ul>
+                                            </td>
+                                            <td>2</td>
+                                            <td>Rp 878,395</td>
+                                            <td><img src="\img\one-bed-apartment\ob-ap1.jpg" alt=""></td>
+                                            <td class="action-btn">
+                                                <button class="btn-action" id="btn-edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Honance Hotel</div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="datatables-simple-demo.js"></script>
+    </body>
+</html>
