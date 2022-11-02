@@ -1,3 +1,5 @@
+const { DataTable } = require("simple-datatables");
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
@@ -15,3 +17,8 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+
+function deleteRow(row) {
+    var d = row.parentNode.parentNode.rowIndex;
+    document.getElementById('datatablesSimple').deleteRow(d);
+}
