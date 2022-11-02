@@ -84,14 +84,43 @@
             <h2 class="title">Hasil Pencarian :</h2>
             <div class="box-hasil">
                 <div class="hasil-nama">
-                    <h3 class="title-content">Standard Room</h3>
-                    <div class="rating">
+                    <h3 class="text-nama">Standard Room</h3>
+                    <div class="rating rating-cari">
                         <a href="" id="ratingKamar">4,9</a>
                         <i class="fa-solid fa-star"></i>
                     </div>
                 </div>
                 <div class="hasil-kamar">
-                    
+                    <div class="hasil-sidebar">
+                        <img src="img/foto-kamar.jpg" alt="" id="thumbnailKamar">
+                        <p class="title-fasilitas">Fasilitas :</p>
+                        <ul>
+                            <% for (i = 0; i < 6; i++) { %> 
+                                <div class="fasilitas-box">
+                                    <li class="fasilitas">
+                                        <i class="fa-solid fa-wifi"></i>
+                                        <a href="" id="wifi">Wifi</a>
+                                    </li>
+                                </div>
+                            <% } %> 
+                        </ul>
+                    </div>
+                    <div class="hasil-article">
+                        <div class="hasil-image">
+                            <% for (i = 0; i < 4; i++) { %> 
+                                <img src="img/foto-kamar.jpg" alt="" class="detailGambar">
+                            <% } %> 
+                        </div>
+                        <div class="hasil-information">
+                            <div class="informasi-harga">
+                                <p class="">Harga :</p>
+                                <p class="textHarga">Rp. <span id="hargaKamar">221.305</span> /malam</p>
+                            </div>
+                            <div class="button-checkin">
+                                <a href="" class="textCheckIn">Check In Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

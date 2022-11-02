@@ -179,6 +179,8 @@ a.textContent {
 }
 .rating {
     float: right;
+}
+.overflow-rating {
     margin-top: -24px;
 }
 #ratingKamar {
@@ -190,14 +192,87 @@ a.textContent {
     height: 12px;
     color: #008C95;
 }
+.rating-cari {
+    position: relative;
+    margin-top: -41px;
+    margin-right: 10px;
+    z-index: 2;
+}
 .hasil-pencarian {
     width: 52%;
     margin: 10px auto;
 }
 .box-hasil {
     border: 1px solid #008C95;
-    margin: auto;
+    margin: 0 auto;
 }
 .hasil-nama {
-    
+    height: 30px;
+    padding: 5px;
+    border-bottom: 1px solid #008C95;
+    clear: both;
+}
+.text-nama {
+    margin-top: 0;
+    line-height: 30px;
+    vertical-align: middle;
+    font-weight: lighter;
+}
+.hasil-kamar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.hasil-sidebar {
+    width: 40%;
+    border-right: 1px solid #008C95;
+}
+#thumbnailKamar {
+    margin: 12px;
+    width: 180px;
+    height: 100px;
+}
+.fasilitas {
+    margin: 0;
+}
+.title-fasilitas {
+    margin-left: 12px;
+}
+.fasilitas-box {
+    margin: 0 -24px;
+}
+.hasil-article {
+    width: fit-content;
+}
+.hasil-image {
+    display: flex;
+    flex-wrap: wrap;
+}
+.detailGambar {
+    flex-basis: 50%;
+    flex-grow: 1;
+    height: 100px;
+}
+.hasil-information {
+    width: 100%;
+    margin: 80px 20px 0;
+    display: flex;
+    flex-direction: row;
+}
+.informasi-harga {
+    width: 100%;
+    margin: 0;
+}
+.button-checkin {
+    width: 240px;
+    height: 30px;
+    background-color: #008C95;
+    padding: 4px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.textCheckIn {
+    color: white;
+    font-size: 16px;
+    line-height: 30px;
 }
