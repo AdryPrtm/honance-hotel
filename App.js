@@ -1,7 +1,6 @@
 const { json } = require("body-parser");
 const express = require("express");
 const app = express();
-const php = require('php');
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
@@ -73,7 +72,7 @@ app.get("/bookings", (req, res) => {
   });
 });
 
-// Get data rooms from database
+// Get data rooms then join with facilities from database
 app.get("/rooms", (req, res) => {
   // query to get data rooms
   connection.query("SELECT * FROM rooms JOIN facilities ON facilities.id_facilities=rooms.id_facilities", (err, rows) => {
@@ -109,7 +108,6 @@ app.post("/tambah", (req, res) => {
 });
 
 // method delete data
-
 app.get("/delete/:id_room", (req, res) => {
   connection.query(
     `DELETE FROM rooms WHERE id_room='${req.params.id_room}'`,
@@ -120,7 +118,6 @@ app.get("/delete/:id_room", (req, res) => {
 });
 
 // halaman update
-
 app.get("/update/:id_room", (req, res) => {
   connection.query(
     `SELECT * FROM rooms WHERE id_room='${req.params.id_room}'`,
@@ -132,7 +129,6 @@ app.get("/update/:id_room", (req, res) => {
 });
 
 // method post data
-
 app.post("/updateroom", (req, res) => {
   let idRoom = req.body.id_room;
   let idRoom2 = req.body.id_room2;
