@@ -18,7 +18,7 @@
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <!--Admin Profile-->
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
@@ -68,7 +68,7 @@
                             <!--Room Types-->
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Room Types</div>
+                                    <div class="card-body">Room Types  <%= jumlahK  %> </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="/rooms">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -78,17 +78,7 @@
                             <!--New Bookings-->
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">New Bookings</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="/bookings">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Confirmed Bookings-->
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Confirmed Bookings</div>
+                                    <div class="card-body">New Bookings <%= jumlahB  %> </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="/bookings">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -106,7 +96,7 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Code</th>
+                                            <th>ID Booking</th>
                                             <th>Room</th>
                                             <th>Check In</th>
                                             <th>Check Out</th>
@@ -115,36 +105,42 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
-                                            <th>Status</th>
+                                        
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Code</th>
-                                            <th>Room</th>
-                                            <th>Check In</th>
-                                            <th>Check Out</th>
-                                            <th>Quantity</th>
-                                            <th>Total</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>dhyeby264b</td>
-                                            <td>Standard Room</td>
-                                            <td>2 October 2022</td>
-                                            <td>3 October 2022</td>
-                                            <td>1</td>
-                                            <td>Rp 221,305</td>
-                                            <td>Arif Muhamad</td>
-                                            <td>arifmuhamad@gmail.com</td>
-                                            <td>089873864726</td>
-                                            <td>Active</td>
-                                        </tr>
+                                        <% data.forEach((datas,index)=> { %>
+                                            <tr>
+                                                <td>
+                                                    <%- datas.id_booking %>
+                                                </td>
+                                                <td>
+                                                    <%- datas.id_room %>
+                                                </td>
+                                                <td>
+                                                    <%= datas.check_in.slice(0,10) %>
+                                                </td>
+                                                <td>
+                                                    <%= datas.check_out.slice(0,10) %>
+                                                </td>
+                                                <td>
+                                                    <%- datas.quantity_booking %>
+                                                </td>
+                                                <td>
+                                                    <%- datas.total_booking %>
+                                                </td>
+                                                <td>
+                                                    <%- datas.user_name %>
+                                                </td>
+                                                <td>
+                                                    <%- datas.user_email %>
+                                                </td>
+                                                <td>
+                                                    <%- datas.user_phone %>
+                                                </td>
+                    
+                                            </tr>
+                                            <% }) %>
                                     </tbody>
                                 </table>
                             </div>

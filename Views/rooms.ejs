@@ -47,7 +47,7 @@
                             </a>
                             <!--Rooms-->
                             <a class="nav-link" href="/rooms">
-                                <div class="sb-nav-link-icon"><i class="fa-sharp fa-solid fa-door-closed"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-door-open"></i></i></div>
                                 Rooms
                             </a>
                         </div>
@@ -66,7 +66,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fa-solid fa-door-open"></i>
-                                All Rooms
+                                All Rooms  <a href="/formtambah" class="btn btn-info ms-5 fw-bold text-white">Tambah</a>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -81,152 +81,23 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID Room</th>
-                                            <th>Name</th>
-                                            <th>Facilities</th>
-                                            <th>Quantity</th>
-                                            <th>Price</th>
-                                            <th>Photos</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                        <!--Standard Room-->
+                                        <% for (let i=0; i < rooms.length; i++) { %>
                                         <tr>
-                                            <td>STD-RM</td>
-                                            <td>Standard Room</td>
+                                            <td><%- rooms[i].id_room %></td>
+                                            <td><%- rooms[i].name_room %></td>
+                                            <td><%- rooms[i].id_facilities %></td>
+                                            <td><%- rooms[i].quantity_room %></td>
+                                            <td><%- rooms[i].price_room %></td>
+                                            <td>test</td>
                                             <td>
-                                                <ul>
-                                                    <li>Double Bed</li>
-                                                    <li>WiFi</li>
-                                                    <li>Water Heater</li>
-                                                    <li>Air Conditioner</li>
-                                                    <li>Television</li>
-                                                </ul>
-                                            </td>
-                                            <td>5</td>
-                                            <td>Rp 231,305</td>
-                                            <td><img src="\img\standard-room\std-rm1.jpg" alt=""></td>
-                                            <td class="action-btn">
-                                                <button class="btn-action" id="btn-edit" onclick=""><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
+                                                <center>
+                                                <a href="/delete/<%= rooms[i].id_room  %>" class="btn btn-danger badge rounded-pill" onclick="return confirm(`Yakin ingin dihapus?`)">Delete</a>
+                                                <a href="/update/<%= rooms[i].id_room  %>" class="btn btn-success badge rounded-pill">Update</a>
+                                                </center>
                                             </td>
                                         </tr>
-                                        <!--Twin Room-->
-                                        <tr>
-                                            <td>TWN-RM</td>
-                                            <td>Twin Room</td>
-                                            <td>
-                                                <ul>
-                                                    <li>Twin Bed</li>
-                                                    <li>Air Conditioner</li>
-                                                    <li>WiFi</li>
-                                                    <li>Water Heater</li>
-                                                    <li>Television</li>
-                                                </ul>
-                                            </td>
-                                            <td>3</td>
-                                            <td>Rp 292,492</td>
-                                            <td><img src="\img\twin-room\twn-rm1.jpg" alt=""></td>
-                                            <td class="action-btn">
-                                                <button class="btn-action" id="btn-edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
-                                            </td>
-                                        </tr>
-                                        <!--Family Room-->
-                                        <tr>
-                                            <td>FMY-RM</td>
-                                            <td>Family Room</td>
-                                            <td>
-                                                <ul>
-                                                    <li>King Bed</li>
-                                                    <li>WiFi</li>
-                                                    <li>City View</li>
-                                                    <li>Balcony</li>
-                                                    <li>Water Heater</li>
-                                                    <li>Air Conditioner</li>
-                                                    <li>Television</li>
-                                                    <li>Additional Toilet</li>
-                                                </ul>
-                                            </td>
-                                            <td>2</td>
-                                            <td>Rp 642,859</td>
-                                            <td><img src="\img\family-room\fmy-rm1.jpg" alt=""></td>
-                                            <td class="action-btn">
-                                                <button class="btn-action" id="btn-edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
-                                            </td>
-                                        </tr>
-                                        <!--Deluxe Room-->
-                                        <tr>
-                                            <td>DLX-RM</td>
-                                            <td>Deluxe Room</td>
-                                            <td>
-                                                <ul>
-                                                    <li>King Bed</li>
-                                                    <li>WiFi</li>
-                                                    <li>Balcony</li>
-                                                    <li>Air Conditioner</li>
-                                                    <li>Television</li>
-                                                    <li>Water Heater</li>
-                                                </ul>
-                                            </td>
-                                            <td>5</td>
-                                            <td>Rp 315,255</td>
-                                            <td><img src="\img\deluxe-room\dlx-rm1.jpg" alt=""></td>
-                                            <td class="action-btn">
-                                                <button class="btn-action" id="btn-edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
-                                            </td>
-                                        </tr>
-                                        <!--Superior Twin Room-->
-                                        <tr>
-                                            <td>SPR-TWN-RM</td>
-                                            <td>Superior Twin Room</td>
-                                            <td>
-                                                <ul>
-                                                    <li>Queen Bed</li>
-                                                    <li>Outdoor View</li>
-                                                    <li>WiFi</li>
-                                                    <li>Water Heater</li>
-                                                    <li>Air Conditioner</li>
-                                                    <li>Television</li>
-                                                    <li>Additional Toilet</li>
-                                                </ul>
-                                            </td>
-                                            <td>3</td>
-                                            <td>Rp 506,445</td>
-                                            <td><img src="\img\superior-twin-room\spr-twn-rm1.jpg" alt=""></td>
-                                            <td class="action-btn">
-                                                <button class="btn-action" id="btn-edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
-                                            </td>
-                                        </tr>
-                                        <!--One Bed Apartment-->
-                                        <tr>
-                                            <td>OB-AP</td>
-                                            <td>One Bed Apartment</td>
-                                            <td>
-                                                <ul>
-                                                    <li>Queen Bed</li>
-                                                    <li>Outdoor View</li>
-                                                    <li>Water Heater</li>
-                                                    <li>WiFi</li>
-                                                    <li>Air Conditioner</li>
-                                                    <li>Additional Toilet</li>
-                                                    <li>Television</li>
-                                                </ul>
-                                            </td>
-                                            <td>2</td>
-                                            <td>Rp 878,395</td>
-                                            <td><img src="\img\one-bed-apartment\ob-ap1.jpg" alt=""></td>
-                                            <td class="action-btn">
-                                                <button class="btn-action" id="btn-edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-                                                <button class="btn-action" id="btn-delete" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i> Delete</button>
-                                            </td>
-                                        </tr>
+                                        <% } %>
                                     </tbody>
                                 </table>
                             </div>
