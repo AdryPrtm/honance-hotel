@@ -8,17 +8,14 @@
         <title>Rooms</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="admin.css" rel="stylesheet" />
-        <link rel="stylesheet" href="rooms.css">
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="/admin">Honance Hotel</a>
-            <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <!--Admin Profile-->
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
@@ -66,7 +63,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fa-solid fa-door-open"></i>
-                                All Rooms  <a href="/formtambah" class="btn btn-info ms-5 fw-bold text-white">Tambah</a>
+                                All Rooms  <a href="/formtambah" class="btn btn-info ms-5 fw-bold text-white">Add</a>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -82,22 +79,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% for (let i=0; i < rooms.length; i++) { %>
+                                        <% data.forEach((datas,index) => { %>
                                         <tr>
-                                            <td><%- rooms[i].id_room %></td>
-                                            <td><%- rooms[i].name_room %></td>
-                                            <td><%- rooms[i].id_facilities %></td>
-                                            <td><%- rooms[i].quantity_room %></td>
-                                            <td><%- rooms[i].price_room %></td>
-                                            <td>test</td>
+                                            <td><%- datas.id_room %></td>
+                                            <td><%- datas.name_room %></td>
+                                            <td>
+                                                <li><%- datas.name_facilities %></li>
+                                            </td>
+                                            <td><%- datas.quantity_room %></td>
+                                            <td>Rp <%- datas.price_room %></td>
+                                            <td><img src="/img/rooms/<%= datas.id_room %>.jpg" alt=""></td>
                                             <td>
                                                 <center>
-                                                <a href="/delete/<%= rooms[i].id_room  %>" class="btn btn-danger badge rounded-pill" onclick="return confirm(`Yakin ingin dihapus?`)">Delete</a>
-                                                <a href="/update/<%= rooms[i].id_room  %>" class="btn btn-success badge rounded-pill">Update</a>
+                                                <a href="/delete/<%= datas.id_room  %>" class="btn btn-danger badge" onclick="return confirm(`Yakin ingin dihapus?`)">Delete</a>
+                                                <a href="/update/<%= datas.id_room  %>" class="btn btn-success badge">Update</a>
                                                 </center>
                                             </td>
                                         </tr>
-                                        <% } %>
+                                        <% }) %>
                                     </tbody>
                                 </table>
                             </div>

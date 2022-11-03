@@ -1,5 +1,7 @@
+const { json } = require("body-parser");
 const express = require("express");
 const app = express();
+const php = require('php');
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
@@ -74,9 +76,12 @@ app.get("/bookings", (req, res) => {
 // Get data rooms from database
 app.get("/rooms", (req, res) => {
   // query to get data rooms
-  connection.query("SELECT * FROM rooms", (err, rows) => {
+  connection.query("SELECT * FROM rooms JOIN facilities ON facilities.id_facilities=rooms.id_facilities", (err, rows) => {
     if (err) throw err;
-    res.render("rooms.ejs", { rooms: rows });
+    let response = JSON.parse(JSON.stringify(rows));
+    res.render("rooms.ejs", {
+      data: response,
+     });
   });
 });
 

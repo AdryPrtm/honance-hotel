@@ -15,10 +15,4 @@ window.addEventListener('DOMContentLoaded', event => {
             localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
         });
     }
-
 });
-
-function deleteRow(row) {
-    var d = row.parentNode.parentNode.rowIndex;
-    document.getElementById('datatablesSimple').deleteRow(d);
-}
