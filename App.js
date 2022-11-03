@@ -38,6 +38,11 @@ app.get("/hasil-pencarian", (req, res) => {
   res.render("pencarian.ejs");
 });
 
+// get checkin page
+app.get("/checkin", (req, res) => {
+  res.render("checkin.ejs")
+})
+
 // get admin page
 app.get("/admin", (req, res) => {
 
@@ -80,7 +85,7 @@ app.get("/rooms", (req, res) => {
     let response = JSON.parse(JSON.stringify(rows));
     res.render("rooms.ejs", {
       data: response,
-     });
+    });
   });
 });
 

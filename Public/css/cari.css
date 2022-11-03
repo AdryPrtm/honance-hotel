@@ -42,41 +42,19 @@ li i {
 .menu-profile {
     margin-top: -6px;
 }
-.namaPengguna {
-    font-size: 14px;
-    margin-left: 5px;
-}
 
 .container {
     width: 90%;
     margin: 10px auto;
 }
-.banner {
-    height: 210px;
-    padding: 20px;
-    background-color: #2A3240;
-}
-.banner-logo {
-    display: block;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-}
-.banner-namaHotel {
-    margin: 5px auto;
-    text-align: center;
-    font-size: 26px;
-    color: #008C95;
-}
-.banner-sloganHotel {
-    margin: -5px auto;
-    text-align: center;
-    font-size: 13px;
-    color: #F6CB64;
-}
-
 .whitespace {
     height: 40px;
+}
+.rating-cari {
+    position: relative;
+    margin-top: -41px;
+    margin-right: 10px;
+    z-index: 2;
 }
 .main-pencarian {
     width: 50%;
@@ -146,58 +124,6 @@ a.textContent {
 .textSubmit {
     color: white;
 }
-
-.recomendation {
-    width: 50%;
-    margin: auto;
-}
-.titleRecomendation {
-    margin: 20px auto 0;
-    text-align: center;
-}
-.container-recomendation {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.contentKamar {
-    margin: 20px 10px;
-}
-#gambarKamar {
-    width: 170px;
-    height: 100px;
-}
-#namaKamar {
-    font-size: 14px;
-}
-.harga {
-    font-size: 12px;
-    margin: auto;
-}
-#hargaKamar {
-    color: #008C95;
-}
-.rating {
-    float: right;
-}
-.overflow-rating {
-    margin-top: -24px;
-}
-#ratingKamar {
-    font-size: 12px;
-    color: #008C95;
-}
-.rating i {
-    width: 12px;
-    height: 12px;
-    color: #008C95;
-}
-.rating-cari {
-    position: relative;
-    margin-top: -41px;
-    margin-right: 10px;
-    z-index: 2;
-}
 .hasil-pencarian {
     width: 52%;
     margin: 10px auto;
@@ -214,6 +140,7 @@ a.textContent {
 }
 .text-nama {
     margin-top: 0;
+    margin-left: 5px;
     line-height: 30px;
     vertical-align: middle;
     font-weight: lighter;
@@ -226,6 +153,18 @@ a.textContent {
 .hasil-sidebar {
     width: 40%;
     border-right: 1px solid #008C95;
+}
+.rating {
+    text-align: right;
+}
+#ratingKamar {
+    font-size: 12px;
+    color: #008C95;
+}
+.rating i {
+    width: 12px;
+    height: 12px;
+    color: #008C95;
 }
 #thumbnailKamar {
     margin: 12px;
@@ -255,24 +194,42 @@ a.textContent {
 }
 .hasil-information {
     width: 100%;
-    margin: 80px 20px 0;
+    margin: 80px 0 0;
     display: flex;
     flex-direction: row;
 }
 .informasi-harga {
     width: 100%;
-    margin: 0;
+    margin-left: 20px;
+}
+.titleHarga {
+    font-size: 14px;
+}
+.textHarga {
+    margin-top: -8px;
+    font-size: 18px;
+    color: #008C95;
+}
+#hargaKamar {
+    font-size: 20px;
+    color: #008C95;
+}
+.textSmall {
+    font-size: 14px;
 }
 .button-checkin {
-    width: 240px;
+    width: 280px;
     height: 30px;
     background-color: #008C95;
     padding: 4px;
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 18px;
+    margin-right: 20px;
 }
 .textCheckIn {
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 30px;
+    margin: 0 5px;
+    font-weight: bold;
 }
