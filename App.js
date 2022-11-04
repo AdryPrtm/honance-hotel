@@ -40,11 +40,6 @@ app.get("/", (req, res) => {
   });
 });
 
-// app.post("/cari", (req,res) => {
-//   const {namaKamar} = req.body;
-//   console.log(namaKamar);
-// })
-
 app.get("/hasil-cari/:id_room", (req,res) => {
   const {id_room} = req.params;
   console.log(id_room);
@@ -54,20 +49,8 @@ app.get("/hasil-cari/:id_room", (req,res) => {
     res.render("pencarian.ejs", {
       data: response,
     });
-    // console.log(response);
   })
 })
-
-// get search result
-// app.get("/hasil-pencarian", (req, res) => {
-//   connection.query(`SELECT * FROM rooms JOIN facilities ON facilities.id_facilities=rooms.id_facilities WHERE id_room = '${idKamarCari}'`, (err, rows) => {
-//     if (err) throw err;
-//     let response = JSON.parse(JSON.stringify(rows));
-//     res.render("pencarian.ejs", {
-//       data: response,
-//     });
-//   });
-// });
 
 // get admin page
 app.get("/admin", (req, res) => {
