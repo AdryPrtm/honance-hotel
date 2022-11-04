@@ -40,7 +40,10 @@ app.get("/", (req, res) => {
   });
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0e2a562e3b429b56a7f945c7c95f63f53c0476df
 app.get("/hasil-cari/:id_room", (req,res) => {
   const {id_room} = req.params;
   console.log(id_room);
@@ -50,7 +53,6 @@ app.get("/hasil-cari/:id_room", (req,res) => {
     res.render("pencarian.ejs", {
       data: response,
     });
-    // console.log(response);
   })
 })
 
@@ -96,7 +98,7 @@ app.get("/rooms", (req, res) => {
     let response = JSON.parse(JSON.stringify(rows));
     res.render("rooms.ejs", {
       data: response,
-     });
+    });
   });
 });
 
