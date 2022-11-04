@@ -1,4 +1,5 @@
 const { json } = require("body-parser");
+const { response } = require("express");
 const express = require("express");
 const app = express();
 
@@ -30,13 +31,44 @@ connection.connect((err) => {
 
 // get dashboard
 app.get("/", (req, res) => {
-  res.render("dashboard.ejs");
+  connection.query("SELECT * FROM rooms", (err, rows) => {
+    if (err) throw err;
+    if (rows.length < 0) return false;
+    let response = JSON.parse(JSON.stringify(rows));
+    res.render("dashboard.ejs", {
+      data: response,
+    });
+  });
 });
 
+// app.post("/cari", (req,res) => {
+//   const {namaKamar} = req.body;
+//   console.log(namaKamar);
+// })
+
+app.get("/hasil-cari/:id_room", (req,res) => {
+  const {id_room} = req.params;
+  console.log(id_room);
+  connection.query(`SELECT * FROM rooms WHERE id_room = '${id_room}'`, (err,rows) => {
+    if (err) throw err;
+    let response = JSON.parse(JSON.stringify(rows));
+    res.render("pencarian.ejs", {
+      data: response,
+    });
+    // console.log(response);
+  })
+})
+
 // get search result
-app.get("/hasil-pencarian", (req, res) => {
-  res.render("pencarian.ejs");
-});
+// app.get("/hasil-pencarian", (req, res) => {
+//   connection.query(`SELECT * FROM rooms JOIN facilities ON facilities.id_facilities=rooms.id_facilities WHERE id_room = '${idKamarCari}'`, (err, rows) => {
+//     if (err) throw err;
+//     let response = JSON.parse(JSON.stringify(rows));
+//     res.render("pencarian.ejs", {
+//       data: response,
+//     });
+//   });
+// });
 
 // get checkin page
 app.get("/checkin", (req, res) => {

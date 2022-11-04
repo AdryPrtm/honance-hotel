@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Honance Hotel</title>
-    <link rel="stylesheet" href="css/cari.css">
+    <link rel="stylesheet" href="/css/cari.css">
     <script src="https://kit.fontawesome.com/bfe692999b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="nav-bar">
         <div class="nav-box">
-            <img src="img/logo-nav.png" class="nav-logo">
+            <img src="/img/logo-nav.png" class="nav-logo">
             <ul class="nav-menu">
                 <li class="menu-kupon">
                     <i class="fa-solid fa-ticket"></i>
@@ -82,9 +82,10 @@
         </div>
         <div class="hasil-pencarian">
             <h2 class="title">Hasil Pencarian :</h2>
+            <% data.forEach((datas) => { %> 
             <div class="box-hasil">
                 <div class="hasil-nama">
-                    <h3 class="text-nama">Standard Room</h3>
+                    <h3 class="text-nama"><%= datas.name_room %></h3>
                     <div class="rating rating-cari">
                         <a href="" id="ratingKamar">4,9</a>
                         <i class="fa-solid fa-star"></i>
@@ -92,7 +93,7 @@
                 </div>
                 <div class="hasil-kamar">
                     <div class="hasil-sidebar">
-                        <img src="img/foto-kamar.jpg" alt="" id="thumbnailKamar">
+                        <img src="/img/rooms/<%= datas.id_room %>.jpg" alt="" id="thumbnailKamar">
                         <p class="title-fasilitas">Fasilitas :</p>
                         <ul>
                             <% for (i = 0; i < 6; i++) { %> 
@@ -114,7 +115,7 @@
                         <div class="hasil-information">
                             <div class="informasi-harga">
                                 <p class="titleHarga">Harga :</p>
-                                <p class="textHarga">Rp. <span id="hargaKamar">221.305</span><span class="textSmall"> /malam</span></p>
+                                <p class="textHarga">Rp. <span id="hargaKamar"> <%= datas.price_room %> </span><span class="textSmall"> /malam</span></p>
                             </div>
                             <div class="button-checkin">
                                 <a href="" class="textCheckIn">Check In Sekarang</a>
@@ -123,6 +124,7 @@
                     </div>
                 </div>
             </div>
+            <% }) %> 
         </div>
     </div>
 </body>

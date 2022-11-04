@@ -41,65 +41,78 @@
             <p class="banner-sloganHotel">Luxury Deluxe Elegant</p>
         </div>
         <div class="main-pencarian overflow-pencarian">
-            <h1 class="title-pencarian">Pencarian Kamar</h1>
-            <span class="title-content">Jenis Kamar</span>
-            <div class="pencarian-box">
-                <i class="fa-solid fa-door-open"></i>
-                <a href="" class="textContent">Standard Room</a>
-            </div>
-            <div class="date-duration">
-                <div class="checkin">
-                    <span class="title-content">Check-In</span>
-                    <div class="pencarian-box small-box">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <a href="" class="textContent">23 Oktober 2022</a>
-                    </div>
-                </div>
-                <div class="duration">
-                    <span class="title-content">Durasi</span>
-                    <div class="pencarian-box small-box">
-                        <i class="fa-solid fa-moon"></i>
-                        <a href="" class="textContent">1 Malam</a>
-                    </div>
-                </div>
-                <div class="checkout">
-                    <span class="title-content">Check-Out</span>
-                    <div class="pencarian-box small-box">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <a href="" class="textContent">24 Oktober 2022</a>
-                    </div>
-                </div>
-            </div>
-            <div class="guests">
-                <span class="title-content">Tamu</span>
-                <div class="pencarian-box">
+            <form action="">
+                <h1 class="title-pencarian">Pencarian Kamar</h1>
+                <span class="title-content">Jenis Kamar</span>
+                <div class="pencarian-box costum-select">
                     <i class="fa-solid fa-door-open"></i>
-                    <a href="" class="textContent">2 Dewasa, 0 Anak</a>
+                    <select name="namaKamar" class="textContent" id="select">
+                        <% data.forEach((datas,index) => { %>
+                        <option value="<%= datas.id_room %>" index="<%= index %>"><%= datas.name_room %></option>
+                        <% let indexKamar = index }) %> 
+                    </select>
                 </div>
-            </div>
-            <div class="pencarian-button">
-                <div class="button-content">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <a href="/hasil-pencarian" class="textSubmit">Cari Kamar</a>
+                <div class="date-duration">
+                    <div class="checkin">
+                        <span class="title-content">Check-In</span>
+                        <div class="pencarian-box small-box">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <a href="" class="textContent">23 Oktober 2022</a>
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="title-content">Durasi</span>
+                        <div class="pencarian-box small-box">
+                            <i class="fa-solid fa-moon"></i>
+                            <a href="" class="textContent">1 Malam</a>
+                        </div>
+                    </div>
+                    <div class="checkout">
+                        <span class="title-content">Check-Out</span>
+                        <div class="pencarian-box small-box">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <a href="" class="textContent">24 Oktober 2022</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="guests">
+                    <span class="title-content">Tamu</span>
+                    <div class="pencarian-box">
+                        <i class="fa-solid fa-door-open"></i>
+                        <a href="" class="textContent">2 Dewasa, 0 Anak</a>
+                    </div>
+                </div>
+                <div class="pencarian-button">
+                    <div class="button-content">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <a href="/" class="textSubmit" id="cari">Cari Kamar</a>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="recomendation">
             <h4 class="titleRecomendation">Rekomendasi Kamar Untuk Anda</h4>
             <div class="container-recomendation">
-                <% for (i = 0; i<6; i++) { %>
+                <% data.forEach((datas,index) => { %>
                     <div class="contentKamar">
-                        <img src="img/foto-kamar.jpg" id="gambarKamar" alt=""><br>
-                        <a href="" id="namaKamar">Standard Room</a>
-                        <p class="harga">Rp. <span id="hargaKamar">221.305</span> /malam</p>
+                        <img src="img/rooms/<%= datas.id_room %>.jpg" id="gambarKamar" alt=""><br>
+                        <a href="" id="namaKamar"><%= datas.name_room %></a>
+                        <p class="harga">Rp. <span id="hargaKamar"><%= datas.price_room %></span> /malam</p>
                         <div class="rating overflow-rating">
                             <a href="" id="ratingKamar">4,9</a>
                             <i class="fa-solid fa-star"></i>
                         </div>
                     </div>
-                <% } %> 
+                <% }) %> 
             </div>
         </div>
     </div>
+
+    <script>
+        var savedIndex = $("#select").prop('selectedIndex');
+        let selected = document.getElementById("select");
+        let id = selected.options[savedIndex].value;
+        document.getElementById("cari").href = `/hasil-cari/${id}`;
+    </script>
 </body>
 </html>

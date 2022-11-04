@@ -109,6 +109,45 @@ li i {
     height: 16px;
     color: #008C95;
 }
+.custom-select {
+    display: relative;
+}
+select {
+    position: relative;
+    margin-top: -10px;
+    width: 80%;
+    border: 1px solid white;
+    line-height: 30px;
+    margin-left: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 1px;
+}
+.select-selected {
+    background-color: #008C95;
+}
+.select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+/*style items (options):*/
+.select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+}  
 a.textContent {
     font-size: 14px;
     margin-left: 8px;
