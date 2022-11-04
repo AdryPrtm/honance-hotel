@@ -3,14 +3,11 @@ const express = require("express");
 const fileupload = require('express-fileupload');
 const app = express();
 
+// Middleware
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(fileupload());
-
-app.listen(3000, () => {
-  console.log("Server Running on http://localhost:3000");
-});
 
 // database connect
 var mysql = require("mysql");
@@ -154,4 +151,8 @@ app.post("/updateroom", (req, res) => {
       res.redirect("/rooms");
     }
   );
+});
+
+app.listen(3000, () => {
+  console.log("Server Running on http://localhost:3000");
 });
