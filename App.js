@@ -40,10 +40,6 @@ app.get("/", (req, res) => {
   });
 });
 
-// app.post("/cari", (req,res) => {
-//   const {namaKamar} = req.body;
-//   console.log(namaKamar);
-// })
 
 app.get("/hasil-cari/:id_room", (req,res) => {
   const {id_room} = req.params;
@@ -57,17 +53,6 @@ app.get("/hasil-cari/:id_room", (req,res) => {
     // console.log(response);
   })
 })
-
-// get search result
-// app.get("/hasil-pencarian", (req, res) => {
-//   connection.query(`SELECT * FROM rooms JOIN facilities ON facilities.id_facilities=rooms.id_facilities WHERE id_room = '${idKamarCari}'`, (err, rows) => {
-//     if (err) throw err;
-//     let response = JSON.parse(JSON.stringify(rows));
-//     res.render("pencarian.ejs", {
-//       data: response,
-//     });
-//   });
-// });
 
 // get admin page
 app.get("/admin", (req, res) => {
@@ -97,7 +82,7 @@ app.get("/bookings", (req, res) => {
   connection.query("SELECT * FROM bookings", (err, rows) => {
     let response = JSON.parse(JSON.stringify(rows)); // parsing
     if (err) throw err;
-    res.render("bookings.ejs", {
+    res.render("bookinodengs.ejs", {
       data: response,
     });
   });

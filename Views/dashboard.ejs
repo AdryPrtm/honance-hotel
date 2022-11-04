@@ -109,9 +109,9 @@
     </div>
 
     <script>
-        var savedIndex = $("#select").prop('selectedIndex');
+        /* var savedIndex = $("#select").prop('selectedIndex'); */
         let selected = document.getElementById("select");
-        let id = selected.options[savedIndex].value;
+        let id = selected.options[selected.selectedIndex].value;
         document.getElementById("cari").href = `/hasil-cari/${id}`;
     </script>
 </body>
