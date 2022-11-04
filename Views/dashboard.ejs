@@ -7,6 +7,7 @@
     <title>Honance Hotel</title>
     <link rel="stylesheet" href="css/dashboard.css">
     <script src="https://kit.fontawesome.com/bfe692999b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <nav class="nav-bar">
@@ -48,7 +49,7 @@
                     <i class="fa-solid fa-door-open"></i>
                     <select name="namaKamar" class="textContent" id="select">
                         <% data.forEach((datas,index) => { %>
-                        <option value="<%= datas.id_room %>" index="<%= index %>"><%= datas.name_room %></option>
+                        <option value="<%= datas.id_room %>"><%= datas.name_room %></option>
                         <% let indexKamar = index }) %> 
                     </select>
                 </div>
@@ -109,10 +110,15 @@
     </div>
 
     <script>
-        var savedIndex = $("#select").prop('selectedIndex');
-        let selected = document.getElementById("select");
-        let id = selected.options[savedIndex].value;
-        document.getElementById("cari").href = `/hasil-cari/${id}`;
+        $(document).ready(()=>{
+            $('select').on('change', ()=>{
+                let id = select.options[select.selectedIndex].value;
+                document.getElementById("cari").href = `/hasil-cari/${id}`;
+            })
+            // let id_hotel = $('#select').val()
+            // let select = document.getElementById("select");
+            // console.log(id_hotel);
+        })
     </script>
 </body>
 </html>

@@ -94,7 +94,7 @@ app.get("/rooms", (req, res) => {
     let response = JSON.parse(JSON.stringify(rows));
     res.render("rooms.ejs", {
       data: response,
-     });
+    });
   });
 });
 
