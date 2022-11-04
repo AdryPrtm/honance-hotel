@@ -1,15 +1,14 @@
 const { json } = require("body-parser");
 const { response } = require("express");
 const express = require("express");
+const fileupload = require('express-fileupload');
 const app = express();
 
+// Middleware
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.listen(3000, () => {
-  console.log("Server Running on http://localhost:3000");
-});
+app.use(fileupload());
 
 // database connect
 var mysql = require("mysql");
@@ -70,11 +69,6 @@ app.get("/hasil-cari/:id_room", (req,res) => {
 //   });
 // });
 
-// get checkin page
-app.get("/checkin", (req, res) => {
-  res.render("checkin.ejs")
-})
-
 // get admin page
 app.get("/admin", (req, res) => {
 
@@ -117,7 +111,7 @@ app.get("/rooms", (req, res) => {
     let response = JSON.parse(JSON.stringify(rows));
     res.render("rooms.ejs", {
       data: response,
-    });
+     });
   });
 });
 
@@ -135,13 +129,23 @@ app.post("/tambah", (req, res) => {
   let price = req.body.price;
 
   console.log(nameRoom);
-  connection.query(
-    `INSERT INTO rooms(id_room,name_room,id_facilities,quantity_room,price_room) VALUES('${idRoom}','${nameRoom}','${facilities}','${quantity}','${price}')`,
-    (err, result) => {
-      if (err) throw err;
-      res.redirect("/rooms");
-    }
-  );
+
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send("No files were uploaded.");
+  }
+
+  sampleFile = req.files.photo;
+  uploadPath = __dirname + "/public/img/rooms/" + sampleFile.name;
+  sampleFile.mv(uploadPath, function (err) {
+    if (err) return res.status(500).send(err);
+    connection.query(
+      `INSERT INTO rooms(id_room,name_room,id_facilities,quantity_room,price_room) VALUES('${idRoom}','${nameRoom}','${facilities}','${quantity}','${price}')`,
+      (err, result) => {
+        if (err) throw err;
+        res.redirect("/rooms");
+      }
+    );
+  });
 });
 
 // method delete data
@@ -179,4 +183,8 @@ app.post("/updateroom", (req, res) => {
       res.redirect("/rooms");
     }
   );
+});
+
+app.listen(3000, () => {
+  console.log("Server Running on http://localhost:3000");
 });
