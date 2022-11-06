@@ -85,9 +85,9 @@
             <% data.forEach((datas) => { %> 
             <div class="box-hasil">
                 <div class="hasil-nama">
-                    <h3 class="text-nama"><%= datas.name_room %></h3>
+                    <h3 class="text-nama" id="roomresult"><%= datas.name_room %></h3>
                     <div class="rating rating-cari">
-                        <a href="" id="ratingKamar">4,9</a>
+                        <a href="" id="ratingKamar"> <%= datas.rating %> </a>
                         <i class="fa-solid fa-star"></i>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                                 <p class="textHarga">Rp. <span id="hargaKamar"> <%= datas.price_room %> </span><span class="textSmall"> /malam</span></p>
                             </div>
                             <div class="button-checkin">
-                                <a href="" class="textCheckIn" id="checkin">Check In Sekarang</a>
+                                <a href="/checkin/<%= datas.id_room  %> " class="textCheckIn" id="checkin">Check In Sekarang</a>
                             </div>
                         </div>
                     </div>
@@ -132,9 +132,21 @@
         // data.forEach(datas => {
         //     let id = datas.id_room; 
         // });
-        let id = req.params;
-        console.log(id);
-        document.getElementById('checkin').href = `/checkin/${id}`;
+       /*  let id = req.body.roomresult; */
+
+        // document.getElementsById('checkin') => {
+            // let id = req.body.roomresult;
+            // console.log(id);
+        // }
+        /* console.log(id); */
+        
+       /*  $('#checkin').on('click', () => {
+            let id = req.body;
+            console.log(id);
+           document.getElementById('checkin').href = `/checkin/${id}`;
+        })
+ */
+       /*  document.getElementById('checkin').href = `/checkin/${id}`; */
     </script>
 </body>
 </html>

@@ -104,7 +104,7 @@
                         <a href="" id="namaKamar"><%= datas.name_room %></a>
                         <p class="harga">Rp. <span id="hargaKamar"><%= datas.price_room %></span> /malam</p>
                         <div class="rating overflow-rating">
-                            <a href="" id="ratingKamar">4,9</a>
+                            <a href="" id="ratingKamar"> <%= datas.rating %> </a>
                             <i class="fa-solid fa-star"></i>
                         </div>
                     </div>
@@ -114,17 +114,9 @@
     </div>
 
     <script>
-<<<<<<< HEAD
         /* var savedIndex = $("#select").prop('selectedIndex'); */
-        let selected = document.getElementById("select");
-        let id = selected.options[selected.selectedIndex].value;
-        document.getElementById("cari").href = `/hasil-cari/${id}`;
-        $(document).ready(()=>{
-            $('select').on('change', ()=>{
-=======
         $(document).ready(() => {
             $('#select').on('change', () => {
->>>>>>> 072595ec4b966cb3dfa2bd38da0a61c0cde22c09
                 let id = select.options[select.selectedIndex].value;
                 document.getElementById("cari").href = `/hasil-cari/${id}`;
             })

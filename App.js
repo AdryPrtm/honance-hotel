@@ -65,12 +65,11 @@ app.get("/checkin/:id_room", (req,res) => {
 })
 
 app.get("/pembayaran", (req,res) => {
-  res.render("pembayaran.ejs")
+      res.render("pembayaran.ejs");
 })
 
 // get admin page
 app.get("/admin", (req, res) => {
-
   connection.query("SELECT * FROM bookings", (err, rows) => {
     if (err) throw err;
     connection.query("SELECT * FROM rooms", (err, rows2) => {
