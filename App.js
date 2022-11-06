@@ -52,6 +52,20 @@ app.get("/hasil-cari/:id_room", (req,res) => {
   })
 })
 
+app.get("/checkin", (req,res) => {
+  // connection.query(`SELECT * FROM rooms WHERE id_room = '${id_room}'`, (err,rows) => {
+    // if (err) throw err;
+    // let response = JSON.parse(JSON.stringify(rows));
+    res.render("checkin.ejs");
+      // data: response,
+    // });
+  // })
+})
+
+app.get("/pembayaran", (req,res) => {
+  res.render("pembayaran.ejs")
+})
+
 // get admin page
 app.get("/admin", (req, res) => {
 

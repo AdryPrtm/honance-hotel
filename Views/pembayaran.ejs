@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honance Hotel</title>
+    <link rel="stylesheet" href="css/pembayaran.css">
+    <script src="https://kit.fontawesome.com/bfe692999b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-box">
+            <img src="img/logo-nav.png" class="nav-logo">
+            <ul class="nav-menu">
+                <li class="menu-kupon">
+                    <i class="fa-solid fa-ticket"></i>
+                    <a href="" class="kuponText">Kupon</a>
+                </li>
+                <li class="menu-simpan">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <a href="" class="simpanText">Simpan</a>
+                </li>
+                <li class="menu-pesanan">
+                    <i class="fa-solid fa-rectangle-list"></i>
+                    <a href="" class="pesananText">Pesanan Saya</a>
+                </li>
+                <li class="menu-profile-box">
+                    <div class="menu-profile">
+                        <i class="fa-solid fa-user"></i>
+                        <a href="" class="namaPengguna">Arif Muhamad Iqbal</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="whitespace"></div>
+        <div class="content">
+            <div class="metodePembayaran">
+                <h3 class="titleMetode">Metode Pembayaran</h3>
+                <div class="pilihMetode">
+                    <div class="mbanking">
+                        <input type="radio" name="metode" id="mbanking">
+                        <label for="mbanking">M-Banking</label>
+                    </div>
+                    <div class="dana">
+                        <input type="radio" name="metode" id="dana">
+                        <label for="dana">DANA</label>
+                    </div>
+                    <div class="atm">
+                        <input type="radio" name="metode" id="atm">
+                        <label for="atm">ATM</label>
+                    </div>
+                    <div class="tunai">
+                        <input type="radio" name="metode" id="tunai">
+                        <label for="tunai">Tunai</label>
+                    </div>
+                    <div class="minimarket">
+                        <input type="radio" name="metode" id="minimarket">
+                        <label for="minimarket">Alfamart/Indomaret</label>
+                    </div>
+                </div>
+            </div>
+            <div class="kodePembayaranBox">
+                <div class="kodePembayaran">
+                    <h3>Kode Pembayaran</h3>
+                    <h1 class="kode" id="kode">
+                        <% 
+                        const min = 99999999999999;
+                        const max = 999999999999999;
+                        let random = Math.floor(Math.random() * (max - min + 1)) + min; 
+                        %>
+                        <%= parseInt(random); %> 
+                    </h1>
+                    <p>Bayar sebelum 23 Oktober 10:00</p>
+                </div>
+            </div>
+        </div>
+        <div class="konfirmasiButton">
+            <h3>Konfirmasi Pembayaran</h3>
+        </div>
+    </div>
+</body>
+</html>
