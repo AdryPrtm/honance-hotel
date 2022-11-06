@@ -118,7 +118,7 @@
                                 <p class="textHarga">Rp. <span id="hargaKamar"> <%= datas.price_room %> </span><span class="textSmall"> /malam</span></p>
                             </div>
                             <div class="button-checkin">
-                                <a href="" class="textCheckIn">Check In Sekarang</a>
+                                <a href="" class="textCheckIn" id="checkin">Check In Sekarang</a>
                             </div>
                         </div>
                     </div>
@@ -127,5 +127,14 @@
             <% }) %> 
         </div>
     </div>
+    
+    <script>
+        // data.forEach(datas => {
+        //     let id = datas.id_room; 
+        // });
+        let id = req.params;
+        console.log(id);
+        document.getElementById('checkin').href = `/checkin/${id}`;
+    </script>
 </body>
 </html>

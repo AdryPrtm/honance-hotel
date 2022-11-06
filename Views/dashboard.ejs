@@ -121,8 +121,12 @@
             })
             $('#checkin').on('change', () => {
                 let checkin = new Date($('#checkin').value);
-                let checkinDate = checkin.getDay();
-                console.log(checkinDate.toLocaleString);
+                let checkinDate = {
+                    day: checkin.getDay(),
+                    month: checkin.getMonth(),
+                    year: checkin.getFullYear(),
+                }
+                console.log(checkinDate);
             })
             $('#durasi').on('change', () => {
                 let duration = durasi.options[durasi.selectedIndex].value;
