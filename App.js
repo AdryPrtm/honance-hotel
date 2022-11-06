@@ -40,10 +40,7 @@ app.get("/", (req, res) => {
   });
 });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 0e2a562e3b429b56a7f945c7c95f63f53c0476df
 app.get("/hasil-cari/:id_room", (req,res) => {
   const {id_room} = req.params;
   console.log(id_room);
@@ -84,7 +81,7 @@ app.get("/bookings", (req, res) => {
   connection.query("SELECT * FROM bookings", (err, rows) => {
     let response = JSON.parse(JSON.stringify(rows)); // parsing
     if (err) throw err;
-    res.render("bookinodengs.ejs", {
+    res.render("bookings.ejs", {
       data: response,
     });
   });

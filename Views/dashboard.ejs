@@ -110,12 +110,10 @@
     </div>
 
     <script>
-<<<<<<< HEAD
         /* var savedIndex = $("#select").prop('selectedIndex'); */
         let selected = document.getElementById("select");
         let id = selected.options[selected.selectedIndex].value;
         document.getElementById("cari").href = `/hasil-cari/${id}`;
-=======
         $(document).ready(()=>{
             $('select').on('change', ()=>{
                 let id = select.options[select.selectedIndex].value;
@@ -125,7 +123,6 @@
             // let select = document.getElementById("select");
             // console.log(id_hotel);
         })
->>>>>>> 0e2a562e3b429b56a7f945c7c95f63f53c0476df
     </script>
 </body>
 </html>
