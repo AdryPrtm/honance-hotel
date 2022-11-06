@@ -58,21 +58,25 @@
                         <span class="title-content">Check-In</span>
                         <div class="pencarian-box small-box">
                             <i class="fa-solid fa-calendar-days"></i>
-                            <a href="" class="textContent">23 Oktober 2022</a>
+                            <input type="date" name="checkin" id="checkin">
                         </div>
                     </div>
                     <div class="duration">
                         <span class="title-content">Durasi</span>
                         <div class="pencarian-box small-box">
                             <i class="fa-solid fa-moon"></i>
-                            <a href="" class="textContent">1 Malam</a>
+                            <select name="durasi" id="durasi">
+                                <% for (i = 1; i < 31; i++) { %>
+                                <option value="<%= i %>"><%= i %> Hari </option>
+                                <% } %> 
+                            </select>
                         </div>
                     </div>
                     <div class="checkout">
                         <span class="title-content">Check-Out</span>
                         <div class="pencarian-box small-box">
                             <i class="fa-solid fa-calendar-days"></i>
-                            <a href="" class="textContent">24 Oktober 2022</a>
+                            <a href="" class="textContent"></a>
                         </div>
                     </div>
                 </div>
@@ -110,18 +114,33 @@
     </div>
 
     <script>
+<<<<<<< HEAD
         /* var savedIndex = $("#select").prop('selectedIndex'); */
         let selected = document.getElementById("select");
         let id = selected.options[selected.selectedIndex].value;
         document.getElementById("cari").href = `/hasil-cari/${id}`;
         $(document).ready(()=>{
             $('select').on('change', ()=>{
+=======
+        $(document).ready(() => {
+            $('#select').on('change', () => {
+>>>>>>> 072595ec4b966cb3dfa2bd38da0a61c0cde22c09
                 let id = select.options[select.selectedIndex].value;
                 document.getElementById("cari").href = `/hasil-cari/${id}`;
             })
-            // let id_hotel = $('#select').val()
-            // let select = document.getElementById("select");
-            // console.log(id_hotel);
+            $('#checkin').on('change', () => {
+                let checkin = new Date($('#checkin').value);
+                let checkinDate = {
+                    day: checkin.getDay(),
+                    month: checkin.getMonth(),
+                    year: checkin.getFullYear(),
+                }
+                console.log(checkinDate);
+            })
+            $('#durasi').on('change', () => {
+                let duration = durasi.options[durasi.selectedIndex].value;
+                console.log(duration);
+            })
         })
     </script>
 </body>

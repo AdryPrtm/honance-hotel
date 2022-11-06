@@ -52,7 +52,7 @@ li i {
 }
 .reservasi {
     border: 1px solid #008C95;
-    width: 60%;
+    width: 50%;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -95,7 +95,6 @@ input {
 }
 .details {
     margin-left: 40px;
-    border: 1px solid black;
     flex-basis: 35%;
 }
 .logoHotel {
@@ -106,4 +105,36 @@ input {
 #fotoKamar {
     width: 100%;
     height: 120px;
+}
+.namaKamar {
+    margin: 0;
+    margin-bottom: 10px;
+}
+.detailKamar p {
+    font-size: 12px;
+    margin: 0;
+}
+.totalPayment {
+    margin: 30px 0 0;
+}
+.totalPayment h3{
+    margin: 0;
+    font-weight: lighter;
+}
+.totalPayment h2 {
+    margin: 8px 0;
+    font-weight: lighter;
+    color: #008C95;
+}
+.buttonPay {
+    height: 50px;
+    border-radius: 5px;
+    background-color: #008C95;
+    text-align: center;
+}
+.textBayar {
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
 }

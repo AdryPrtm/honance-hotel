@@ -124,30 +124,6 @@ select {
     appearance: none;
     padding: 1px;
 }
-.select-selected {
-    background-color: #008C95;
-}
-.select-items div,.select-selected {
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-    user-select: none;
-}
-/*style items (options):*/
-.select-items {
-    position: absolute;
-    background-color: DodgerBlue;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
-}
-/*hide the items when the select box is closed:*/
-.select-hide {
-    display: none;
-}  
 a.textContent {
     font-size: 14px;
     margin-left: 8px;
@@ -157,8 +133,17 @@ a.textContent {
     flex-direction: row;
 }
 .small-box {
-    width: 140px;
-    margin-right: 54px;
+    width: 160px;
+    margin-right: 24px;
+}
+#checkin {
+    width: 80%;
+    margin-left: 5px;
+    border: none;
+}
+#durasi {
+    width: 80%;
+    margin-left: 5px;
 }
 .pencarian-button {
     width: 200px;
